@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ .tableHeader {
+   padding: 30px;
+ }
+
+ .tableItem {
+   padding: 30px
+ }
+
+ .bodyHeader {
+  padding-right: 100px;
+}
+
+.bodyItem {
+  padding-right: 100px
+}
