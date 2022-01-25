@@ -1,6 +1,6 @@
 # README
 
-# Configuration steps:
+## Configuration steps:
 
 After cloning the repo:
 
@@ -28,3 +28,7 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
 <%= turbo_include_tags %>
 ````
     
+## DB setup
+
+* rails db:create
+* rails db:migrate
