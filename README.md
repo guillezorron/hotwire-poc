@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Configuration steps:
 
-Things you may want to cover:
+After cloning the repo:
 
-* Ruby version
+* ` bundle install `
 
-* System dependencies
+* ` rails webpacker:install `
 
-* Configuration
+* ` rails turbo:install `
 
-* Database creation
+* ` rails turbo:install:redis `
 
-* Database initialization
+in application.html.erb, remove: 
+````
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+````
 
-* How to run the test suite
+and then add
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+````
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<%= stylesheet_link_tag 'application', media: 'all' %>
+<%= yield :head %>
+<%= turbo_include_tags %>
+````
+    
