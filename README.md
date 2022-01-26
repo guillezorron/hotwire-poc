@@ -32,3 +32,9 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
 
 * rails db:create
 * rails db:migrate
+
+## stimulus
+gem 'stimulus-rails'
+bundle install
+rails stimulus:install
+bundle exec rails webpacker:install:stimulus
