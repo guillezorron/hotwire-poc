@@ -33,14 +33,31 @@ div.field {
   margin-bottom: 10px;
 }
 
-.disabled-actions {
+.disabled-create-tweet-button {
   pointer-events: none;
   background-color: #cccccc;
   color: #666666;
   border-color: #999999;
   margin-bottom: 10px;
-
+  height: 28px;
+  border-radius: 9999px;
+  padding: 1px 12px 1px 12px;
+  box-sizing: border-box;
+  font-weight: 500;
 }
+
+.create-tweet-button {
+  height: 28px;
+  border-radius: 9999px;
+  padding: 1px 12px 1px 12px;
+  box-sizing: border-box;
+  background-color: #1d9bf0;
+  border-color: rgb(255, 255, 255);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 div.actions {
   margin-bottom: 10px;
 }

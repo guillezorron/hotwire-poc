@@ -8,9 +8,8 @@ export default class extends Controller {
     console.log('we are liveeee')
   }
 
-  greet(event) {
-    event.preventDefault()
-    debugger
-    navigator.clipboard.writeText(this.sourceTarget.innerText);
+  onChange(event) {
+    const className = event.target.value.trim().length ? 'create-tweet-button' : 'disabled-create-tweet-button'
+    this.sourceTarget.className = className
   }
 }
