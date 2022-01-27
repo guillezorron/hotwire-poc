@@ -1,40 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div data-controller="colors", data-colors-target="heading">
 
-<h1>Tweets</h1>
+  <div class="title">
+    <div> </div>
+    <h1>Tweets</h1>
+    <div class="btn btn-primary", data-action="click->colors#change", data-colors-target="button">Switch to dark!</div>
 
-<div data-controller="hello">
-  <button data-action="click->hello#greet">Greet</button>
-</div>
 
-<table>
-  <thead>
-    <tr>
-      <th class='bodyHeader'>Body</th>
-      <th class='tableHeader'>Likes</th>
-      <th class='tableHeader'>Retweets</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+  </div>
 
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <%= turbo_frame_tag dom_id(tweet), target: '_top' do%>
-        <tr data-controller="clipboard">
-          <td class='bodyItem' input data-clipboard-target="source" ><%= tweet.body %></td>
-          <td class='tableItem'><%= tweet.likes %></td>
-          <td class='tableItem'><%= tweet.retweets %></td>
-          <td><%= link_to 'Show', tweet %></td>
-          <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-          <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><a href="#" data-action="clipboard#copy" >Copy to Clipboard</a></td>
-        </tr>
+  <div data-controller="hello">
+    <button data-action="click->hello#greet">Greet</button>
+  </div>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th class='bodyHeader'>Body</th>
+        <th class='tableHeader'>Likes</th>
+        <th class='tableHeader'>Retweets</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tweets.each do |tweet| %>
+        <%= turbo_frame_tag dom_id(tweet), target: '_top' do%>
+          <tr data-controller="clipboard">
+            <td class='bodyItem' input data-clipboard-target="source" ><%= tweet.body %></td>
+            <td class='tableItem'><%= tweet.likes %></td>
+            <td class='tableItem'><%= tweet.retweets %></td>
+            <td><%= link_to 'Show', tweet %></td>
+            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><a href="#" data-action="clipboard#copy" >Copy to Clipboard</a></td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= turbo_frame_tag 'new_tweet', src: new_tweet_path(@tweet), target: '_top' do %>
-  <%= link_to 'New Tweet', new_tweet_path %>
-<% end %>
+  <%= turbo_frame_tag 'new_tweet', src: new_tweet_path(@tweet), target: '_top' do %>
+    <%= link_to 'New Tweet', new_tweet_path %>
+  <% end %>
+
+</div>
