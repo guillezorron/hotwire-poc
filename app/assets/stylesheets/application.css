@@ -14,6 +14,25 @@
  *= require_self
  */
 
+  .darkMode {
+    background-color: darkblue;
+    color: white;
+    height: 100vh;
+  }
+
+  .lightMode {
+    background-color: white;
+    color: black;
+    height: 100vh;
+  }
+
+ .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  }
+
  .tableHeader {
    padding: 30px;
  }
