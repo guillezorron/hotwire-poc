@@ -12,20 +12,21 @@
       <th class='bodyHeader'>Body</th>
       <th class='tableHeader'>Likes</th>
       <th class='tableHeader'>Retweets</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @tweets.each do |tweet| %>
       <%= turbo_frame_tag dom_id(tweet), target: '_top' do%>
-        <tr>
-          <td class='bodyItem'><%= tweet.body %></td>
+        <tr data-controller="clipboard">
+          <td class='bodyItem' input data-clipboard-target="source" ><%= tweet.body %></td>
           <td class='tableItem'><%= tweet.likes %></td>
           <td class='tableItem'><%= tweet.retweets %></td>
           <td><%= link_to 'Show', tweet %></td>
           <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
           <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><a href="#" data-action="clipboard#copy" >Copy to Clipboard</a></td>
         </tr>
       <% end %>
     <% end %>
