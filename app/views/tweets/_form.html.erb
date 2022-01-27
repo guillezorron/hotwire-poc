@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" data-controller='input'>
     <%= form.label 'Write your tweet here' %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, data: { action: 'change->input#greet' } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'disabled-actions' %>
   </div>
 <% end %>
