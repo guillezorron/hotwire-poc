@@ -33,8 +33,15 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
 * rails db:create
 * rails db:migrate
 
-## stimulus
-gem 'stimulus-rails'
-bundle install
-rails stimulus:install
-bundle exec rails webpacker:install:stimulus
+## stimulus configuration
+
+* gem 'stimulus-rails'
+* bundle install
+* rails stimulus:install
+* bundle exec rails webpacker:install:stimulus
+
+
+## To add new stimulus functions
+This project configuration is different from the one that `rails stimulus:manifest:update` creates, so we recommend not to run it.
+
+Stimulus works with the app/javascript/packs/application.js and  app/javascript/controllers/application.js. Each time you create a new Stimulus controller (at app/javascript/controllers) you must register it at app/javascript/controllers/application.js
