@@ -17,4 +17,20 @@
   </p>
   <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
 <% end %>
+
+
   <%= link_to 'Back', tweets_path, 'data-turbo-frame': '_top' %>
+
+<%= turbo_stream_from @tweet %>
+
+<div>
+  <br>
+  <strong>Comments</strong> 
+  <%= turbo_frame_tag "comments" do %>
+        <% render @tweet.comments %>    
+  <% end %>
+
+  <div >
+    <%= render partial: "comments/form" %>
+  </div>
+</div>
