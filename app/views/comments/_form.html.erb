@@ -1,8 +1,8 @@
 <%= form_with model: [@comment.tweet, @comment], url: tweet_comments_path(@tweet), data: {controller: "reset-form", action: "turbo:submit-end->reset-form#reset"} do |form| %>
   <div>
-    <%= form.text_field :body, placeholder: true %>
+    <%= form.text_field :body, class: 'input', placeholder: true %>
   </div>
   <div>
-    <%= form.submit "Save" %>
+    <%= form.submit "Save", class: 'create-tweet-button' %>
   </div>
 <% end %>
