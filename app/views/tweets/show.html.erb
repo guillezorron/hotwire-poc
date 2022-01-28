@@ -21,12 +21,13 @@
 
   <%= link_to 'Back', tweets_path, 'data-turbo-frame': '_top' %>
 
+<%= turbo_stream_from @comment %>
 
 <strong>Comments</strong> 
 <%= turbo_frame_tag "comments" do %>
       <% render @tweet.comments %>    
 <% end %>
 
-<div>
+<div >
   <%= render partial: "comments/form" %>
 </div>

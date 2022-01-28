@@ -1,4 +1,4 @@
-<%= form_with model: [@comment.tweet, @comment], url: tweet_comments_path(@tweet) do |form| %>
+<%= form_with model: [@comment.tweet, @comment], url: tweet_comments_path(@tweet), data: {controller: "reset-form", action: "turbo:submit-end->reset-form#reset"} do |form| %>
   <div>
     <%= form.text_field :body, placeholder: true %>
   </div>
