@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-  <div data-controller='input'>
-    <div class="field">
+  <div data-controller='input' class='input-container'>
+    <div>
       <%= form.label 'Write your tweet here' %>
-      <%= form.text_area :body, data: { action: 'input#onChange' } %>
+      <%= form.text_area :body, class: 'input', data: { action: 'input#onChange' } %>
     </div>
 
     <div class="actions">
