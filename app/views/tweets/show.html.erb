@@ -23,11 +23,14 @@
 
 <%= turbo_stream_from @tweet %>
 
-<strong>Comments</strong> 
-<%= turbo_frame_tag "comments" do %>
-      <% render @tweet.comments %>    
-<% end %>
+<div>
+  <br>
+  <strong>Comments</strong> 
+  <%= turbo_frame_tag "comments" do %>
+        <% render @tweet.comments %>    
+  <% end %>
 
-<div >
-  <%= render partial: "comments/form" %>
+  <div >
+    <%= render partial: "comments/form" %>
+  </div>
 </div>
