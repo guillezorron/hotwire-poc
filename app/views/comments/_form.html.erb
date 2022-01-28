@@ -1,0 +1,8 @@
+<%= form_with model: [@comment.tweet, @comment], url: tweet_comments_path(@tweet) do |form| %>
+  <div>
+    <%= form.text_field :body, placeholder: true %>
+  </div>
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
