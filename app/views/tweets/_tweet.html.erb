@@ -1,3 +1,15 @@
 <p id='<%= dom_id tweet %>'>
-    <%= tweet.body %>
+  <div data-controller="clipboard" class='tweet'>
+    <div class='bodyItem' input data-clipboard-target="source" ><%= tweet.body %></div>
+    <div class='tableInfo'>
+      Likes: <%= tweet.likes %> &nbsp;&nbsp;|
+      Retweets: <%= tweet.retweets %>
+    </div>
+    <div class='tableActions'>
+      <%= link_to 'Show', tweet %>
+      <%= link_to 'Edit', edit_tweet_path(tweet) %>
+      <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <a href="#" data-action="clipboard#copy" >Copy to Clipboard</a>
+    </div>
+  </div>
 </p>
