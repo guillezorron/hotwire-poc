@@ -50,7 +50,13 @@
   }
 
   .tweet-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .tweet {
     border-bottom: solid 1px lightgray;
+    padding-bottom: 15px;
   }
 
  .title {

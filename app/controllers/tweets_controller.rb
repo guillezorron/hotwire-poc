@@ -26,7 +26,10 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to tweets_url, notice: "Tweet was successfully created." }
+        # format.turbo_stream { render turbo_stream: turbo_stream.replace(@tweets, partial: 'form', locals: {tweet: @tweet}) }
+        # format.html { redirect_to tweets_url, notice: "Tweet was successfully created." }
+        format.turbo_stream
+        # format.html { redirect_to @tweet }
         format.json { render :show, status: :created, location: @tweet }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(@tweet, partial: 'form', locals: {tweet: @tweet}) }

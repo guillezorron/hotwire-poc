@@ -5,17 +5,10 @@ class CommentsController < ApplicationController
         @comment = @tweet.comments.create!(comment_params)
 
         respond_to do |format|
-            if @comment.save!
-            # Instead of redirecting like we normally would, we render a partial for our Stimulus controller to handle
-            # Note that we're just rendering HTML here, no need to render jbuilders or js partials
-            #render partial: 'show', locals: { comment: comment }, status: :ok
-        
+            if @comment.save!        
                 format.turbo_stream
                 format.html { redirect_to @tweet }
-
             else
-                #        render partial: 'form', locals: { comment: comment }, status: :unprocessable_entity
-                
                 format.html { render :new, status: :unprocessable_entity }
             end
         end
